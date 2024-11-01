@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <include file="$(find description_robot_gazebo)/launch/robot_gazebo.launch"/>
+
+    <node pkg="gmapping" name="slam_gmapping" type="slam_gmapping" output="screen">
+        <param name="scan"        value="scan"/>
+        <param name="odom_frame"  value="odom"/>
+        <param name="base_frame"  value="chassis"/>
+    </node>
+
+</launch>

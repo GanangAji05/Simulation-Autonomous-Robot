@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+    <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="burger">
+
+        <xacro:property name="properties" value="${load_yaml(package + '/config/config.yaml')}"/>
+
+
+        <xacro:property name="width" value="0.149"/>
+        <xacro:property name="bodylen" value="0.02" />
+
+        <xacro:property name="width1" value="0.28"/>
+        <xacro:property name="bodylen1" value="0.02" />
+
+        <xacro:property name="boxbawah" value="0.5 0.3 0.05"/>
+
+        <xacro:property name="width_spacer" value="0.01"/>
+        <xacro:property name="bodylen_spacer" value="0.3" />
+
+        <xacro:property name="bodybawah" value="0.0 0.0 0.0"/>
+        <xacro:property name="Jetson" value="0.0 0.0 0.18"/>
+        <xacro:property name="bodybawah_depan" value="0.20 0.0 0.0"/>
+        <xacro:property name="bodybawah_belakang" value="-0.20 0.0 0.0"/>
+        <xacro:property name="bodytengah" value="0.0 0.0 0.15"/>
+        <xacro:property name="bodyatas" value="0.0 0.0 0.3"/>
+
+        <xacro:property name="wheels_radius" value="0.1"/>
+        <xacro:property name="wheels_length" value="0.05"/>
+
+        <xacro:property name="camera_size_x" value="0.05"/>
+        <xacro:property name="camera_size_y" value="0.1"/>
+        <xacro:property name="camera_size_z" value="0.05"/>
+
+        <xacro:property name="cameraSize"  value="0.05"/>
+        <xacro:property name="cameraMass"  value="0.1"/>
+        <xacro:property name="height3"     value="0.05"/>
+        <xacro:property name="axel_offset" value="1"/>
+
+          <!-- Parameters for the Hukoyu Laser -->
+        <xacro:property name="x_hokuyo" value="0.1" />
+        <xacro:property name="y_hokuyo" value="0.1" />
+        <xacro:property name="z_hokuyo" value="0.1" />
+
+
+        <xacro:property name="height3" value="0.05"/>
+        <xacro:property name="axel_offset" value="0.05"/>
+
+        <!-- Parameters for the IMU -->
+        <xacro:property name="x_imu" value="0.01" />
+        <xacro:property name="y_imu" value="0.01" />
+        <xacro:property name="z_imu" value="0.01" />
+
+        <!-- <xacro:property name="joint_wheel_right" value="${-0/4} ${-0/2-0.05/2} ${0.1/2-0.1/2}"/>
+        <xacro:property name="joint_wheel_left" value="${-0/4} ${0/2+0.05/2} ${0.1/2-0.1/2}"/> -->
+    </robot>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<launch>
+    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+      <arg name="world_name" value="$(find description_robot_gazebo)/world/world_update.world"/> 
+      <arg name="paused" value="false"/>
+      <arg name="use_sim_time" value="true"/>
+      <arg name="gui" value="true"/>
+      <arg name="recording" value="false"/>
+      <arg name="debug" value="false"/>
+    </include>
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find description_robot)/models/model.xacro'"/>
+
+    <!-- Spawn the robot after we built the urdf files -->
+    <node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+    args="-urdf -param robot_description -model burger
+    -x 0 -y 3.5 -z 0"/>
+
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+    <param name="use_gui" value="False"/>
+    </node>
+    
+    <!-- Publish the TFs -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+    </node>
+  </launch>
